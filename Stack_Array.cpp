@@ -62,7 +62,12 @@ class Stack{
     }
 
     void printStack(){
-
+        
+                
+        if(isEmpty()){
+            cout<<"Stack is Empty! ";
+            return;
+        }
         for(int i =0 ; i<top+1; i++){
             cout<< arr[i]<< " | ";
         }
