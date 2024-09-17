@@ -73,6 +73,10 @@ class Stack{
         }
 
     }
+
+    int size(){
+        return top+1;
+    }
 };
 
 int main(){
@@ -84,6 +88,7 @@ int main(){
     s.push(234);
     s.push(21);
     s.push(34);
+    cout<<"Size of the stack is: "<< s.size()<<endl;
     cout<< "POPPED: " << s.pop();
     cout<<endl;
     cout<< "POPPED: "<< s.pop();
