@@ -81,39 +81,54 @@ class Stack{
 
 int main(){
 
-    Stack <int> s;
+    Stack<int> s;
+    int option;
 
-    s.push(4);
-    s.push(9);
-    s.push(234);
-    s.push(21);
-    s.push(34);
-    cout<<"Size of the stack is: "<< s.size()<<endl;
-    cout<< "POPPED: " << s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    cout<< "POPPED: "<< s.pop();
-    cout<<endl;
-    // cout<< "TOP ELEMENT: "<< s.topEl()<<endl;
-    s.push(9);
-    s.push(234);
-    s.push(21);
-    s.push(34);
-        s.push(9);
-    s.push(234);
-    s.push(21);
-    s.push(34);
-        s.push(9);
-    s.push(234);
-    s.printStack();
+    do {
+        cout << "\nMenu Driven Program:\n";
+        cout << "1. Push Element\n";
+        cout << "2. Pop Element\n";
+        cout << "3. Check Stack Contents\n";
+        cout << "4. Check Empty\n";
+        cout << "5. Check Full\n";
+        cout << "6. Exit the program\n";
+        cout << "Enter your choice: ";
+        cin >> option;
+
+        switch (option) {
+            case 1: {
+                int element;
+                cout << "Enter an element to push: ";
+                cin >> element;
+                s.push(element);
+                cout << "Element " << element << " successfully pushed into the stack.\n";
+                break;
+            }
+            case 2: {
+                int element2 = s.pop();
+                if (!s.isEmpty()) {
+                    cout << "Element " << element2 << " successfully popped from the stack.\n";
+                }
+                break;
+            }
+            case 3:
+                s.printStack();
+                break;
+            case 4:
+                cout << (s.isEmpty() ? "Stack is empty!" : "Stack is not empty!") << endl;
+                break;
+            case 5:
+                cout << (s.isFull() ? "Stack is full!" : "Stack is not full!") << endl;
+                break;
+            case 6:
+                cout << "Exiting the program.\n";
+                break;
+            default:
+                cout << "Invalid Input. Please enter a valid option!\n";
+                break;
+        }
+    } while (option != 6);
+
+    return 0;
 
 }
